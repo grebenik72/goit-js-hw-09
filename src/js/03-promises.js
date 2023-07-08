@@ -1,4 +1,6 @@
 
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 const selectors = {
   form: document.querySelector('form.form'),
   delay: document.querySelector('[name="delay"]'),
