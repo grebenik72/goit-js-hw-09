@@ -11,7 +11,7 @@ let currentDate = null;
 
 const refs = {
   dateInput: document.querySelector('input#datetime-picker'),
-  btnStartTimer: document.querySelector('button[data-start-timer]'),
+  btnStartTimer: document.querySelector('button[data-start]'),
   daysRemaining: document.querySelector('[data-days]'),
   hoursRemaining: document.querySelector('[data-hours]'),
   minutesRemaining: document.querySelector('[data-minutes]'),
@@ -35,10 +35,7 @@ const options = {
 
 flatpickr(refs.dateInput, options);
 
-Report.info(
-  'Please, choose a date and click on start',
-  'Okay'
-);
+
 
 function onDateCheck(selectedDates) {
   selectedDate = selectedDates[0].getTime();
@@ -46,15 +43,13 @@ function onDateCheck(selectedDates) {
 
   if (selectedDate > currentDate) {
     refs.btnStartTimer.disabled = false;
-    Report.success(
+    alert (
       'Click on start!',
-      'Okay'
     );
     return;
   }
-  Report.failure(
+  alert (
     'Please choose a date in the future',
-    'Okay'
   );
 }
 
