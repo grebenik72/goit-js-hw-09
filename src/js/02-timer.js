@@ -1,7 +1,4 @@
 import flatpickr from "flatpickr";
-// console.log(flatpickr);
-import Notiflix from 'notiflix';
-// console.log(Notiflix);
 import "flatpickr/dist/flatpickr.min.css";
 
 const TIMER_DELAY = 1000;
