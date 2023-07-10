@@ -27,9 +27,10 @@ function onPromiseCreate(e) {
   let valueDelay = Number(selectors.delay.value);
   let step = Number(selectors.step.value);
   let amount = Number(selectors.amount.value);
+  let adj = -1;
 
   for (let i = 1; i <= amount; i += 1) {
-    let promiseDelay = (i=1) ? valueDelay : valueDelay + step * i;
+    let promiseDelay = valueDelay + step * (i + adj);
 
     createPromise(i, promiseDelay)
       .then(({ position, delay }) => {
